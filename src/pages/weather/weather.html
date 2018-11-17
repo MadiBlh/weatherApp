@@ -1,0 +1,70 @@
+<!-- un template d'une app ionic se divise en 3partie -->
+<!-- ######## Premiere partie le ion header ######## -->
+<ion-header>
+        <ion-navbar>
+            <ion-title> {{cityName}}, {{infoWeather.country}}</ion-title>
+        </ion-navbar>
+    </ion-header>
+    
+    <!-- ######## Deuxieme partie le ion content ######## -->
+    <ion-content padding class="myview">
+        <!-- la directive padding crée un padding automatique
+            pour pas que le contenue touche le bord de l'écran
+        -->
+        <ion-card>
+            <ion-card-header class="container-center">
+                <h2 id="temp">{{infoWeather.temp}} °C</h2>
+            </ion-card-header>
+
+            <ion-list>
+                <ion-item>
+                        <ion-grid>
+                                <ion-row>
+                                    <ion-col col-8 class="container-center">
+                                        {{infoWeather.description}}
+                                    </ion-col>
+                                    <ion-col col-4>
+                                        <img src={{infoWeather.img}} alt="">
+                                  </ion-col>
+                                </ion-row>
+                              </ion-grid>
+                        
+                </ion-item>
+
+                <ion-item>
+                    <ion-icon name="thermometer" item-start></ion-icon>
+                    Temperature min :{{infoWeather.tempMin}} °C
+                </ion-item>
+
+                <ion-item>
+                    <ion-icon name="thermometer" item-start></ion-icon>
+                    Temperature max : {{infoWeather.tempMax}} °C
+                </ion-item>
+
+                <ion-item>
+                    Humidité : {{infoWeather.humidity}} %
+                </ion-item>
+
+                <ion-item>
+                    Vent : {{infoWeather.wind}} m/s
+                </ion-item>
+
+                <ion-item>
+                    Pression : {{infoWeather.pressure}} hPa
+                </ion-item>
+
+            </ion-list>
+        </ion-card>
+    </ion-content>
+    
+    <!-- ######## Derniere partie le ion footer ######## -->
+    <ion-footer padding>
+
+            <ion-list>
+                    <ion-item class="op-seven bord-r">
+                            <ion-icon name="calendar" item-start></ion-icon>
+                            {{infoWeather.date}}
+                    </ion-item>
+            </ion-list>
+        
+    </ion-footer>

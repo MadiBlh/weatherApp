@@ -1,0 +1,25 @@
+<ion-header>
+	<ion-navbar danger>
+		<ion-title >Accueil</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="myview">
+	<h1 class="text-light">Bienvenue sur WeatherApp</h1>
+
+	<ion-label>
+		Entrer le nom de votre ville : 
+	</ion-label>
+	<ion-list>
+		<ion-item  class="op-seven">
+			<ion-input id="cityName" type="text" [(ngModel)]="cityName" 
+				name="cityName" class="op-seven"></ion-input>
+		</ion-item>
+	</ion-list>
+
+	<div class="container-center">
+		<button ion-button (click)='getWeather()'>Valider</button>
+	</div>
+	
+</ion-content>
